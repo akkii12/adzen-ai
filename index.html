@@ -3,32 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AdZen AI – Run & Scale Ads on Autopilot</title>
-  <meta name="description" content="AdZen AI automates ad creation, scaling, and optimization using AI. One form. Zero manual work." />
+  <title>AdZen AI – Automate Ads, Grow Revenue</title>
+  <meta name="description" content="AdZen AI fully automates your ad campaigns using AI. One smart form, zero manual work." />
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0b0b0f;
-      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f172a;
+      color: #fff;
       line-height: 1.6;
     }
-    a { color: inherit; text-decoration: none; }
+    a { text-decoration: none; color: inherit; }
     .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-    header { text-align: center; }
+    header {
+      text-align: center;
+      background: linear-gradient(135deg,#6366f1,#22c55e);
+      padding: 80px 20px;
+      border-radius: 12px;
+    }
     header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; color: #b3b3b3; }
+    header p { font-size: 1.3rem; color: #f3f4f6; }
     .btn {
       display: inline-block;
       margin-top: 25px;
-      padding: 14px 28px;
-      background: linear-gradient(135deg,#6d5dfc,#4ade80);
+      padding: 16px 32px;
+      background: #22c55e;
       color: #000;
-      border-radius: 10px;
       font-weight: 600;
+      border-radius: 10px;
     }
     section { margin-top: 80px; }
-    h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    h2 { font-size: 2.2rem; margin-bottom: 25px; text-align: center; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -39,13 +44,16 @@
       padding: 25px;
       border-radius: 14px;
       border: 1px solid #222;
+      transition: transform 0.3s;
     }
-    .card h3 { margin-top: 0; }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { margin-top: 0; color: #22c55e; }
     .pricing {
       text-align: center;
       background: #111827;
       border-radius: 16px;
       padding: 50px 20px;
+      margin-top: 80px;
     }
     .price {
       font-size: 3rem;
@@ -55,8 +63,9 @@
     footer {
       text-align: center;
       padding: 40px 20px;
-      color: #888;
+      color: #94a3b8;
       font-size: 0.9rem;
+      margin-top: 80px;
     }
     @media(max-width:600px){
       header h1 { font-size: 2.3rem; }
@@ -65,11 +74,11 @@
 </head>
 <body>
 
-  <header class="container">
-    <h1>AdZen AI</h1>
-    <p>Build, Run & Scale Ads Automatically Using AI  
-      <br>⚡ One Form. Zero Manual Work.</p>
-    <a href="#pricing" class="btn">Get Early Access</a>
+  <header>
+    <h1>AdZen AI 🚀</h1>
+    <p>Automate Ads, Generate Leads & Sales  
+      <br>One Smart Form. Zero Manual Work.</p>
+    <a href="#pricing" class="btn">Start Free Trial</a>
   </header>
 
   <section class="container">
@@ -77,15 +86,19 @@
     <div class="grid">
       <div class="card">
         <h3>1️⃣ One-Time Setup</h3>
-        <p>Fill a single form with your business details and goals.</p>
+        <p>Fill a single smart form with business info and goals.</p>
       </div>
       <div class="card">
         <h3>2️⃣ AI Campaign Builder</h3>
-        <p>AI creates ads, selects targeting, budgets & creatives.</p>
+        <p>AI creates ad copies, visuals, targeting & budgets automatically.</p>
       </div>
       <div class="card">
         <h3>3️⃣ Auto Optimization</h3>
-        <p>AdZen AI continuously improves ROI while you sleep.</p>
+        <p>AI monitors performance 24/7 and improves ROI continuously.</p>
+      </div>
+      <div class="card">
+        <h3>4️⃣ Transparent Dashboard</h3>
+        <p>Live tracking of spend, leads, sales & performance charts.</p>
       </div>
     </div>
   </section>
@@ -94,21 +107,25 @@
     <h2>Why AdZen AI?</h2>
     <div class="grid">
       <div class="card">
-        <h3>🚀 Smart Optimization</h3>
-        <p>Reduce ad costs & increase conversions automatically.</p>
+        <h3>🤖 AI Ad Creation</h3>
+        <p>Generate high-converting campaigns without hiring agencies.</p>
       </div>
       <div class="card">
-        <h3>🌍 Global Scaling</h3>
-        <p>Expand campaigns across countries & platforms instantly.</p>
+        <h3>⚡ Auto Scaling</h3>
+        <p>Scale campaigns globally based on performance automatically.</p>
       </div>
       <div class="card">
-        <h3>🧠 AI Decisions</h3>
-        <p>No agencies. No managers. Just pure AI execution.</p>
+        <h3>📈 Smart Optimization</h3>
+        <p>AI lowers cost per lead, increases ROAS, and kills underperformers.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 Global Reach</h3>
+        <p>Run campaigns across Google & Meta simultaneously.</p>
       </div>
     </div>
   </section>
 
-  <section class="container pricing" id="pricing">
+  <section class="pricing" id="pricing">
     <h2>Early Access Pricing</h2>
     <p>Limited-time founder offer</p>
     <div class="price">₹999 / month</div>
@@ -122,16 +139,16 @@
     <h2>FAQs</h2>
     <div class="grid">
       <div class="card">
-        <h3>Do I need ad experience?</h3>
+        <h3>Do I need experience?</h3>
         <p>No. AdZen AI handles everything end-to-end.</p>
       </div>
       <div class="card">
         <h3>Is my ad account safe?</h3>
-        <p>Yes. We use official APIs & secure permissions.</p>
+        <p>Yes. We use official APIs and secure permissions only.</p>
       </div>
       <div class="card">
-        <h3>When will full access launch?</h3>
-        <p>Early users get access before public release.</p>
+        <h3>Do you guarantee results?</h3>
+        <p>No. AI-assisted optimization only. Performance varies by business.</p>
       </div>
     </div>
   </section>
