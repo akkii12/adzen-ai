@@ -1,7 +1,10 @@
+// ==========================================
+// FILE 1: /pages/index.js — Landing Page
+// ==========================================
 import React from "react";
 import Link from "next/link";
 
-// All text & content comes from this JSON for easy auto-updates
+// Content JSON included inline for single-paste simplicity
 const content = {
   "header": {
     "title": "AdZen AI",
@@ -80,9 +83,11 @@ export default function Home() {
     </div>
   );
 }
-import React from "react";
 
-export default function Dashboard() {
+// ==========================================
+// FILE 2: /pages/dashboard.js — Dashboard Skeleton
+// ==========================================
+export function Dashboard() {
   return (
     <div style={{ fontFamily: "Arial, sans-serif", background: "#0b0b0f", color: "#fff", minHeight: "100vh", padding: "40px" }}>
       <h1>AdZen AI Dashboard</h1>
@@ -97,7 +102,11 @@ export default function Dashboard() {
     </div>
   );
 }
-{
+
+// ==========================================
+// FILE 3: /data/content.json — Auto-updating content
+// ==========================================
+export const contentJSON = {
   "header": {
     "title": "AdZen AI",
     "subtitle": "Build, Run & Scale Ads Automatically Using AI. One Form. Zero Manual Work.",
@@ -120,9 +129,14 @@ export default function Dashboard() {
     { "q": "When will full access launch?", "a": "Early users get access before public release." }
   ],
   "footer": "© 2026 AdZen AI • All Rights Reserved • Built with ❤️ using AI"
-}
+};
+
+// ==========================================
+// FILE 4: .env.local — Placeholder for API keys
+// ==========================================
+export const envExample = `
 NEXT_PUBLIC_SITE_URL=https://adzen-ai-kodz.vercel.app
 STRIPE_SECRET_KEY=YOUR_STRIPE_KEY
 RAZORPAY_KEY=YOUR_RAZORPAY_KEY
 OPENAI_API_KEY=YOUR_OPENAI_KEY
-
+`;
