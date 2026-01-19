@@ -3,148 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AdZen AI – Automate Ads, Grow Revenue</title>
-  <meta name="description" content="AdZen AI automates ad campaigns using AI. One smart form, zero manual work. Professional, high-conversion SaaS platform." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>AdZen AI – Run & Scale Ads on Autopilot</title>
+  <meta name="description" content="AdZen AI automates ad creation, scaling, and optimization using AI. One form. Zero manual work." />
   <style>
-    /* Global */
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family:'Inter',sans-serif; background:#0f172a; color:#fff; line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1200px; margin:auto; padding:60px 20px; }
-
-    /* Header / Hero */
-    header { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; 
-      padding:120px 20px; 
-      background:linear-gradient(135deg,#6366f1,#22c55e);
-      border-radius:16px; 
-      background-image:url('https://via.placeholder.com/3840x2160'); /* Replace with your high-res hero image */
-      background-size:cover; background-position:center; background-blend-mode:multiply;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0b0b0f;
+      color: #ffffff;
+      line-height: 1.6;
     }
-    header img.logo { position:absolute; top:20px; left:20px; width:150px; }
-    header h1 { font-size:3rem; font-weight:700; margin-bottom:20px; text-shadow:0 2px 15px rgba(0,0,0,0.3);}
-    header p { font-size:1.4rem; max-width:800px; text-shadow:0 2px 10px rgba(0,0,0,0.4);}
-    .btn { display:inline-block; margin-top:30px; padding:16px 36px; background:#22c55e; color:#000; font-weight:700; border-radius:12px; transition:0.3s; }
-    .btn:hover { background:#16a34a; }
-
-    /* Sections */
-    section { margin-top:100px; }
-    h2 { font-size:2.5rem; margin-bottom:40px; text-align:center; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
-
-    /* Cards */
-    .card { background:#151520; padding:30px; border-radius:16px; border:1px solid #222; transition:transform 0.3s,box-shadow 0.3s; }
-    .card:hover { transform:translateY(-5px); box-shadow:0 10px 30px rgba(0,0,0,0.5);}
-    .card h3 { margin-bottom:15px; color:#22c55e; font-size:1.4rem; }
-    .card p { font-size:1rem; color:#cbd5e1; }
-
-    /* Pricing */
-    .pricing { text-align:center; background:#111827; border-radius:20px; padding:70px 20px; margin-top:80px; }
-    .price { font-size:3rem; font-weight:700; margin:20px 0; color:#22c55e; }
-    .pricing p { font-size:1.1rem; color:#cbd5e1; margin-bottom:25px; }
-
-    /* FAQ */
-    .faq-card { background:#151520; padding:25px; border-radius:14px; border:1px solid #222; cursor:pointer; transition:background 0.3s; }
-    .faq-card:hover { background:#1e1e2f; }
-    .faq-answer { display:none; margin-top:10px; color:#cbd5e1; }
-
-    /* Footer */
-    footer { text-align:center; padding:50px 20px; font-size:0.9rem; color:#94a3b8; margin-top:100px; }
-
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+    header { text-align: center; }
+    header h1 { font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; color: #b3b3b3; }
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg,#6d5dfc,#4ade80);
+      color: #000;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    section { margin-top: 80px; }
+    h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #151520;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #222;
+    }
+    .card h3 { margin-top: 0; }
+    .pricing {
+      text-align: center;
+      background: #111827;
+      border-radius: 16px;
+      padding: 50px 20px;
+    }
+    .price {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #888;
+      font-size: 0.9rem;
+    }
     @media(max-width:600px){
-      header h1 { font-size:2.3rem; }
-      h2 { font-size:2rem; }
+      header h1 { font-size: 2.3rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header / Hero -->
-  <header>
-    <img src="https://via.placeholder.com/200x60?text=AdZen+Logo" alt="AdZen AI Logo" class="logo">
-    <h1>AdZen AI 🚀</h1>
-    <p>Automate Ads, Generate Leads & Sales. One Smart Form. Zero Manual Work.</p>
-    <a href="#pricing" class="btn">Start Free Trial</a>
+  <header class="container">
+    <h1>AdZen AI</h1>
+    <p>Build, Run & Scale Ads Automatically Using AI  
+      <br>⚡ One Form. Zero Manual Work.</p>
+    <a href="#pricing" class="btn">Get Early Access</a>
   </header>
 
-  <!-- How It Works -->
   <section class="container">
     <h2>How It Works</h2>
     <div class="grid">
       <div class="card">
         <h3>1️⃣ One-Time Setup</h3>
-        <p>Fill a single smart form with your business details and goals.</p>
+        <p>Fill a single form with your business details and goals.</p>
       </div>
       <div class="card">
         <h3>2️⃣ AI Campaign Builder</h3>
-        <p>AI generates ads, targeting, creatives, and budget allocation automatically.</p>
+        <p>AI creates ads, selects targeting, budgets & creatives.</p>
       </div>
       <div class="card">
         <h3>3️⃣ Auto Optimization</h3>
-        <p>Continuous monitoring & optimization ensures maximum ROI without manual work.</p>
-      </div>
-      <div class="card">
-        <h3>4️⃣ Transparent Dashboard</h3>
-        <p>Track your ad spend, leads, and sales in real-time with clear charts.</p>
+        <p>AdZen AI continuously improves ROI while you sleep.</p>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
   <section class="container">
     <h2>Why AdZen AI?</h2>
     <div class="grid">
       <div class="card">
-        <h3>🤖 AI Ad Creation</h3>
-        <p>Generate high-performing campaigns automatically with no agency needed.</p>
+        <h3>🚀 Smart Optimization</h3>
+        <p>Reduce ad costs & increase conversions automatically.</p>
       </div>
       <div class="card">
-        <h3>⚡ Auto Scaling</h3>
-        <p>Scale campaigns across platforms and countries responsibly and effectively.</p>
+        <h3>🌍 Global Scaling</h3>
+        <p>Expand campaigns across countries & platforms instantly.</p>
       </div>
       <div class="card">
-        <h3>📈 Smart Optimization</h3>
-        <p>AI lowers cost per lead, increases ROAS, and pauses underperforming ads.</p>
-      </div>
-      <div class="card">
-        <h3>🌍 Global Reach</h3>
-        <p>Run campaigns simultaneously on Google, Meta & other ad networks.</p>
+        <h3>🧠 AI Decisions</h3>
+        <p>No agencies. No managers. Just pure AI execution.</p>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="pricing" id="pricing">
+  <section class="container pricing" id="pricing">
     <h2>Early Access Pricing</h2>
     <p>Limited-time founder offer</p>
     <div class="price">₹999 / month</div>
-    <p>✔ Unlimited campaigns<br>✔ AI Optimization<br>✔ Priority Support</p>
+    <p>✔ Unlimited campaigns  
+       <br>✔ AI Optimization  
+       <br>✔ Priority Support</p>
     <a href="#" class="btn">Join Waitlist</a>
   </section>
 
-  <!-- FAQ -->
   <section class="container">
     <h2>FAQs</h2>
     <div class="grid">
-      <div class="faq-card" onclick="this.querySelector('.faq-answer').style.display=this.querySelector('.faq-answer').style.display==='block'?'none':'block'">
-        <h3>Do I need experience?</h3>
-        <p class="faq-answer">No. AdZen AI handles everything end-to-end automatically.</p>
+      <div class="card">
+        <h3>Do I need ad experience?</h3>
+        <p>No. AdZen AI handles everything end-to-end.</p>
       </div>
-      <div class="faq-card" onclick="this.querySelector('.faq-answer').style.display=this.querySelector('.faq-answer').style.display==='block'?'none':'block'">
+      <div class="card">
         <h3>Is my ad account safe?</h3>
-        <p class="faq-answer">Yes. We use official APIs and secure permissions only.</p>
+        <p>Yes. We use official APIs & secure permissions.</p>
       </div>
-      <div class="faq-card" onclick="this.querySelector('.faq-answer').style.display=this.querySelector('.faq-answer').style.display==='block'?'none':'block'">
-        <h3>Do you guarantee results?</h3>
-        <p class="faq-answer">No. AI-assisted optimization only. Performance varies by business.</p>
+      <div class="card">
+        <h3>When will full access launch?</h3>
+        <p>Early users get access before public release.</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    © 2026 AdZen AI • All Rights Reserved<br>
-    Built with ❤️ using AI
+    © 2026 AdZen AI • All Rights Reserved  
+    <br>Built with ❤️ using AI
   </footer>
 
 </body>
