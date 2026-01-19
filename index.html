@@ -1,142 +1,145 @@
-// ==========================================
-// FILE 1: /pages/index.js — Landing Page
-// ==========================================
-import React from "react";
-import Link from "next/link";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdZen AI – Run & Scale Ads on Autopilot</title>
+  <meta name="description" content="AdZen AI automates ad creation, scaling, and optimization using AI. One form. Zero manual work." />
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0b0b0f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+    header { text-align: center; }
+    header h1 { font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; color: #b3b3b3; }
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg,#6d5dfc,#4ade80);
+      color: #000;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    section { margin-top: 80px; }
+    h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #151520;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #222;
+    }
+    .card h3 { margin-top: 0; }
+    .pricing {
+      text-align: center;
+      background: #111827;
+      border-radius: 16px;
+      padding: 50px 20px;
+    }
+    .price {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+    @media(max-width:600px){
+      header h1 { font-size: 2.3rem; }
+    }
+  </style>
+</head>
+<body>
 
-// Content JSON included inline for single-paste simplicity
-const content = {
-  "header": {
-    "title": "AdZen AI",
-    "subtitle": "Build, Run & Scale Ads Automatically Using AI. One Form. Zero Manual Work.",
-    "cta": "Get Early Access"
-  },
-  "features": [
-    { "title": "1️⃣ One-Time Setup", "description": "Fill a single form with your business details and goals." },
-    { "title": "2️⃣ AI Campaign Builder", "description": "AI creates ads, selects targeting, budgets & creatives." },
-    { "title": "3️⃣ Auto Optimization", "description": "AdZen AI continuously improves ROI while you sleep." }
-  ],
-  "pricing": {
-    "description": "Limited-time founder offer",
-    "price": "₹999 / month",
-    "benefits": ["Unlimited campaigns", "AI Optimization", "Priority Support"],
-    "cta": "Join Waitlist"
-  },
-  "faqs": [
-    { "q": "Do I need ad experience?", "a": "No. AdZen AI handles everything end-to-end." },
-    { "q": "Is my ad account safe?", "a": "Yes. We use official APIs & secure permissions." },
-    { "q": "When will full access launch?", "a": "Early users get access before public release." }
-  ],
-  "footer": "© 2026 AdZen AI • All Rights Reserved • Built with ❤️ using AI"
-};
+  <header class="container">
+    <h1>AdZen AI</h1>
+    <p>Build, Run & Scale Ads Automatically Using AI  
+      <br>⚡ One Form. Zero Manual Work.</p>
+    <a href="#pricing" class="btn">Get Early Access</a>
+  </header>
 
-export default function Home() {
-  return (
-    <div style={{ fontFamily: "Arial, sans-serif", background: "#0b0b0f", color: "#fff" }}>
-      <header style={{ textAlign: "center", padding: "60px 20px", background: "linear-gradient(135deg,#6366f1,#22c55e)" }}>
-        <h1 style={{ fontSize: "3rem", marginBottom: "10px" }}>{content.header.title}</h1>
-        <p style={{ fontSize: "1.2rem" }}>{content.header.subtitle}</p>
-        <Link href="#pricing">
-          <a style={{ display: "inline-block", marginTop: "25px", padding: "14px 28px", background: "#22c55e", color: "#000", borderRadius: "10px", fontWeight: "600" }}>
-            {content.header.cta}
-          </a>
-        </Link>
-      </header>
-
-      <section style={{ maxWidth: "1100px", margin: "auto", padding: "60px 20px" }}>
-        <h2 style={{ fontSize: "2.2rem", marginBottom: "20px", textAlign: "center" }}>How It Works</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))", gap: "25px" }}>
-          {content.features.map((f,i) => (
-            <div key={i} style={{ background: "#151520", padding: "25px", borderRadius: "14px", border: "1px solid #222" }}>
-              <h3>{f.title}</h3>
-              <p>{f.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="pricing" style={{ textAlign: "center", padding: "60px 20px", background: "#111827", borderRadius: "16px" }}>
-        <h2>Pricing</h2>
-        <p>{content.pricing.description}</p>
-        <div style={{ fontSize: "3rem", fontWeight: "bold", margin: "20px 0" }}>{content.pricing.price}</div>
-        <p>{content.pricing.benefits.join(" • ")}</p>
-        <a href="#" style={{ display: "inline-block", marginTop: "20px", padding: "14px 28px", background: "#22c55e", color: "#000", borderRadius: "10px", fontWeight: "600" }}>
-          {content.pricing.cta}
-        </a>
-      </section>
-
-      <section style={{ maxWidth: "1100px", margin: "auto", padding: "60px 20px" }}>
-        <h2 style={{ textAlign: "center" }}>FAQs</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))", gap: "25px" }}>
-          {content.faqs.map((faq,i) => (
-            <div key={i} style={{ background: "#151520", padding: "25px", borderRadius: "14px", border: "1px solid #222" }}>
-              <h3>{faq.q}</h3>
-              <p>{faq.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <footer style={{ textAlign: "center", padding: "40px 20px", color: "#888", fontSize: "0.9rem" }}>
-        {content.footer}
-      </footer>
+  <section class="container">
+    <h2>How It Works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1️⃣ One-Time Setup</h3>
+        <p>Fill a single form with your business details and goals.</p>
+      </div>
+      <div class="card">
+        <h3>2️⃣ AI Campaign Builder</h3>
+        <p>AI creates ads, selects targeting, budgets & creatives.</p>
+      </div>
+      <div class="card">
+        <h3>3️⃣ Auto Optimization</h3>
+        <p>AdZen AI continuously improves ROI while you sleep.</p>
+      </div>
     </div>
-  );
-}
+  </section>
 
-// ==========================================
-// FILE 2: /pages/dashboard.js — Dashboard Skeleton
-// ==========================================
-export function Dashboard() {
-  return (
-    <div style={{ fontFamily: "Arial, sans-serif", background: "#0b0b0f", color: "#fff", minHeight: "100vh", padding: "40px" }}>
-      <h1>AdZen AI Dashboard</h1>
-      <p>Welcome! Your campaigns will appear here once AI automation is enabled.</p>
-      <ul>
-        <li>Live Leads</li>
-        <li>Sales Metrics</li>
-        <li>AI Suggestions</li>
-        <li>Budget Optimization</li>
-      </ul>
-      <p style={{ marginTop: "30px", color: "#aaa" }}>⚡ Full automation coming soon. You only need to monitor results.</p>
+  <section class="container">
+    <h2>Why AdZen AI?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🚀 Smart Optimization</h3>
+        <p>Reduce ad costs & increase conversions automatically.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 Global Scaling</h3>
+        <p>Expand campaigns across countries & platforms instantly.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 AI Decisions</h3>
+        <p>No agencies. No managers. Just pure AI execution.</p>
+      </div>
     </div>
-  );
-}
+  </section>
 
-// ==========================================
-// FILE 3: /data/content.json — Auto-updating content
-// ==========================================
-export const contentJSON = {
-  "header": {
-    "title": "AdZen AI",
-    "subtitle": "Build, Run & Scale Ads Automatically Using AI. One Form. Zero Manual Work.",
-    "cta": "Get Early Access"
-  },
-  "features": [
-    { "title": "1️⃣ One-Time Setup", "description": "Fill a single form with your business details and goals." },
-    { "title": "2️⃣ AI Campaign Builder", "description": "AI creates ads, selects targeting, budgets & creatives." },
-    { "title": "3️⃣ Auto Optimization", "description": "AdZen AI continuously improves ROI while you sleep." }
-  ],
-  "pricing": {
-    "description": "Limited-time founder offer",
-    "price": "₹999 / month",
-    "benefits": ["Unlimited campaigns", "AI Optimization", "Priority Support"],
-    "cta": "Join Waitlist"
-  },
-  "faqs": [
-    { "q": "Do I need ad experience?", "a": "No. AdZen AI handles everything end-to-end." },
-    { "q": "Is my ad account safe?", "a": "Yes. We use official APIs & secure permissions." },
-    { "q": "When will full access launch?", "a": "Early users get access before public release." }
-  ],
-  "footer": "© 2026 AdZen AI • All Rights Reserved • Built with ❤️ using AI"
-};
+  <section class="container pricing" id="pricing">
+    <h2>Early Access Pricing</h2>
+    <p>Limited-time founder offer</p>
+    <div class="price">₹999 / month</div>
+    <p>✔ Unlimited campaigns  
+       <br>✔ AI Optimization  
+       <br>✔ Priority Support</p>
+    <a href="#" class="btn">Join Waitlist</a>
+  </section>
 
-// ==========================================
-// FILE 4: .env.local — Placeholder for API keys
-// ==========================================
-export const envExample = `
-NEXT_PUBLIC_SITE_URL=https://adzen-ai-kodz.vercel.app
-STRIPE_SECRET_KEY=YOUR_STRIPE_KEY
-RAZORPAY_KEY=YOUR_RAZORPAY_KEY
-OPENAI_API_KEY=YOUR_OPENAI_KEY
-`;
+  <section class="container">
+    <h2>FAQs</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Do I need ad experience?</h3>
+        <p>No. AdZen AI handles everything end-to-end.</p>
+      </div>
+      <div class="card">
+        <h3>Is my ad account safe?</h3>
+        <p>Yes. We use official APIs & secure permissions.</p>
+      </div>
+      <div class="card">
+        <h3>When will full access launch?</h3>
+        <p>Early users get access before public release.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 AdZen AI • All Rights Reserved  
+    <br>Built with ❤️ using AI
+  </footer>
+
+</body>
+</html>
