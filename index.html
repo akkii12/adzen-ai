@@ -1,186 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AdZen AI – Run & Scale Ads on Autopilot</title>
-  <meta name="description" content="AdZen AI automates ad creation, scaling, and optimization using AI." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdZen AI – AI Ads on Autopilot</title>
+<meta name="description" content="AdZen AI automates ad creation, scaling, and optimization using AI.">
 
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0b0b0f;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-    header { text-align: center; }
-    header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; color: #b3b3b3; }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 28px;
-      background: linear-gradient(135deg,#6d5dfc,#4ade80);
-      color: #000;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-    }
+/* Body */
+body{margin:0;font-family:'Inter',sans-serif;background:linear-gradient(135deg,#f5f7fa,#e4ebf5);color:#1f2937;line-height:1.6;overflow-x:hidden;position:relative;}
+a{text-decoration:none;color:inherit;}
 
-    section { margin-top: 80px; }
-    h2 { font-size: 2.2rem; margin-bottom: 20px; }
+/* Floating shapes */
+.shape{position:absolute;border-radius:50%;opacity:0.15;animation:float 25s linear infinite;}
+.shape1{width:120px;height:120px;background:#6d5dfc;top:10%;left:5%;}
+.shape2{width:80px;height:80px;background:#4ade80;top:60%;left:85%;}
+.shape3{width:150px;height:150px;background:#facc15;top:30%;left:50%;}
+@keyframes float{0%{transform:translateY(0) translateX(0);}50%{transform:translateY(-30px) translateX(20px);}100%{transform:translateY(0) translateX(0);}}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 25px;
-    }
+/* Hero */
+header{text-align:center;padding:140px 20px 100px;position:relative;overflow:hidden;}
+header h1{font-size:3.8rem;font-weight:800;background:linear-gradient(135deg,#6d5dfc,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
+header p{font-size:1.25rem;color:#4b5563;max-width:700px;margin:auto;margin-bottom:40px;}
+.btn{display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#6d5dfc,#4ade80);color:#fff;border-radius:14px;font-weight:700;font-size:1.1rem;cursor:pointer;border:none;box-shadow:0 5px 20px rgba(0,0,0,0.15);transition: all 0.5s ease;}
+.btn:hover{transform:scale(1.08);background:linear-gradient(135deg,#4ade80,#6d5dfc);box-shadow:0 15px 35px rgba(0,0,0,0.3);}
 
-    .card {
-      background: #151520;
-      padding: 25px;
-      border-radius: 14px;
-      border: 1px solid #222;
-    }
+/* Sections */
+section{padding:80px 20px;position:relative;z-index:1;}
+h2{font-size:2.4rem;margin-bottom:20px;text-align:center;}
+.sub{text-align:center;color:#6b7280;max-width:700px;margin:auto;margin-bottom:60px;font-size:1.1rem;}
 
-    .pricing {
-      text-align: center;
-      background: #111827;
-      border-radius: 16px;
-      padding: 50px 20px;
-    }
+/* Grid & Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
+.card{background:#ffffff;color:#1f2937;padding:30px 25px;border-radius:20px;border:1px solid rgba(0,0,0,0.05);box-shadow:0 4px 15px rgba(0,0,0,0.05);transition: all 0.5s ease;opacity:0;transform:translateY(50px);cursor:default;}
+.card.visible{opacity:1;transform:translateY(0);}
+.card:hover{transform:translateY(-10px);box-shadow:0 25px 50px rgba(0,0,0,0.15);background:#f0fdf4;}
+.card h3{margin-top:0;font-size:1.35rem;transition: all 0.3s ease;}
+.card:hover h3{transform: scale(1.08);}
 
-    .price {
-      font-size: 3rem;
-      font-weight: bold;
-      margin: 20px 0;
-    }
+/* Pricing */
+.pricing{background:linear-gradient(135deg,#e0f2fe,#f0fdf4);border-radius:24px;padding:70px 40px;text-align:center;}
+.price{font-size:3rem;font-weight:800;margin:25px 0;}
+input{padding:14px;width:300px;border-radius:10px;border:1px solid #d1d5db;margin-top:20px;font-size:1rem;transition:0.3s;}
+input:focus{outline:none;border:2px solid #6d5dfc;box-shadow:0 0 10px rgba(109,93,252,0.3);}
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #888;
-      font-size: 0.9rem;
-    }
+/* Thank-you overlay */
+#thankYouOverlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(245,247,250,0.95);display:flex;flex-direction:column;justify-content:center;align-items:center;opacity:0;pointer-events:none;transition: all 0.5s ease;z-index:999;}
+#thankYouOverlay.show{opacity:1;pointer-events:auto;}
+#thankYouOverlay h1{font-size:3rem;background:linear-gradient(135deg,#6d5dfc,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
+#thankYouOverlay p{font-size:1.25rem;color:#4b5563;max-width:600px;text-align:center;}
+#thankYouOverlay .btn{margin-top:40px;}
 
-    input {
-      padding: 12px;
-      width: 260px;
-      border-radius: 8px;
-      border: none;
-      margin-top: 15px;
-    }
-  </style>
+/* Toast */
+#toast{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#6d5dfc;color:#fff;padding:16px 28px;border-radius:14px;opacity:0;pointer-events:none;transition:0.5s;z-index:1000;font-weight:600;}
+#toast.show{opacity:1;pointer-events:auto;}
+</style>
 </head>
 
 <body>
 
-<header class="container">
+<div class="shape shape1"></div>
+<div class="shape shape2"></div>
+<div class="shape shape3"></div>
+
+<header>
   <h1>AdZen AI</h1>
-  <p>Build, Run & Scale Ads Automatically Using AI<br>⚡ One Form. Zero Manual Work.</p>
-  <a href="#pricing" class="btn">Get Early Access</a>
+  <p>AI-powered platform that builds, runs & scales your ads automatically. One setup, zero daily work.</p>
+  <a href="#pricing" class="btn">Start for ₹999 / month</a>
 </header>
 
 <section class="container">
   <h2>How It Works</h2>
+  <p class="sub">Designed for founders, creators & businesses who want growth without complexity.</p>
   <div class="grid">
-    <div class="card"><h3>1️⃣ One-Time Setup</h3><p>Submit your business details.</p></div>
-    <div class="card"><h3>2️⃣ AI Campaign Builder</h3><p>AI generates ads & targeting.</p></div>
-    <div class="card"><h3>3️⃣ Auto Optimization</h3><p>AI improves performance continuously.</p></div>
+    <div class="card"><h3>🚀 One-Time Setup</h3><p>Tell us about your business, goals & budget. That’s it.</p></div>
+    <div class="card"><h3>🤖 AI Campaign Engine</h3><p>AI creates ads, selects targeting & launches campaigns automatically.</p></div>
+    <div class="card"><h3>📈 Auto Optimization</h3><p>AdZen AI continuously improves campaign performance and ROI.</p></div>
   </div>
 </section>
 
 <section class="container pricing" id="pricing">
-  <h2>Early Access Pricing</h2>
-  <p>Founder offer (limited)</p>
-
+  <h2>Founder Early Access</h2>
+  <p class="sub">Limited-time pricing for early adopters</p>
   <div class="price">₹999 / month</div>
-
-  <input type="email" id="email" placeholder="Enter your email" required />
+  <input type="email" id="email" placeholder="Enter your email" />
   <br>
-
   <button class="btn" onclick="payNow()">Pay & Subscribe</button>
 </section>
 
-<hr style="margin:80px 0;border-color:#222">
+<hr>
 
-<section class="container" id="policies">
+<section class="container">
   <h2>Legal & Policies</h2>
-
-  <div class="card">
-    <h3>Privacy Policy</h3>
-    <p>
-      We collect only essential information such as name, email, and payment
-      details. Payments are securely processed via Razorpay. We do not sell or
-      share user data.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Terms & Conditions</h3>
-    <p>
-      AdZen AI provides AI-powered advertising automation tools. Results may vary.
-      Users must comply with applicable laws. Abuse or illegal use is prohibited.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Refund & Cancellation Policy</h3>
-    <p>
-      Refunds are only applicable if a technical issue prevents access.
-      Requests must be made within 7 days.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Contact</h3>
-    <p>
-      📧 akshaymahankar@gmail.com<br>
-      🌐 https://adzen-ai-kodz.vercel.app<br>
-      🇮🇳 India
-    </p>
+  <div class="grid">
+    <div class="card"><h3>Privacy Policy</h3><p>We collect only essential user and payment details. Payments are securely processed via Razorpay.</p></div>
+    <div class="card"><h3>Terms & Conditions</h3><p>AdZen AI provides AI-powered automation tools. Results may vary. Illegal usage is prohibited.</p></div>
+    <div class="card"><h3>Refund Policy</h3><p>Refunds are applicable only for technical issues within 7 days.</p></div>
+    <div class="card"><h3>Contact</h3><p>📧 akshaymahankar@gmail.com<br>🌐 adzen-ai-kodz.vercel.app<br>🇮🇳 India</p></div>
   </div>
 </section>
 
-<footer>
-  © 2026 AdZen AI • All Rights Reserved
-</footer>
+<footer>© 2026 AdZen AI • Built with ❤️ in India</footer>
+
+<!-- Thank-you overlay -->
+<div id="thankYouOverlay">
+  <h1>Thank You!</h1>
+  <p>Your subscription is confirmed. 🎉 AdZen AI will start running and optimizing your ads automatically.</p>
+  <button class="btn" onclick="closeThankYou()">Back to Homepage</button>
+</div>
+
+<!-- Toast -->
+<div id="toast">Payment Successful! 🎉</div>
 
 <script>
-function payNow() {
-  var email = document.getElementById("email").value;
-  if (!email) {
-    alert("Please enter your email");
-    return;
-  }
+// Scroll animation for cards
+const cards=document.querySelectorAll('.card');
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.2});
+cards.forEach(card=>observer.observe(card));
 
-  var options = {
-    key: "rzp_live_S5zRaPEi4b9Zu6",
-    amount: 99900,
-    currency: "INR",
-    name: "AdZen AI",
-    description: "Monthly Subscription",
-    handler: function (response) {
-      alert("Payment Successful! ID: " + response.razorpay_payment_id);
+// Razorpay Payment + toast + thank-you overlay
+function payNow(){
+  const email=document.getElementById("email").value;
+  if(!email){alert("Please enter your email"); return;}
+  var options={key:"rzp_live_S5zRaPEi4b9Zu6",amount:99900,currency:"INR",name:"AdZen AI",description:"Monthly Subscription",
+    handler:function(res){
+      showToast();
+      setTimeout(()=>{document.getElementById('thankYouOverlay').classList.add('show'); launchConfetti();},800);
     },
-    prefill: {
-      email: email
-    },
-    theme: {
-      color: "#6d5dfc"
-    }
+    prefill:{email:email},
+    theme:{color:"#6d5dfc"}
   };
-
-  var rzp = new Razorpay(options);
+  var rzp=new Razorpay(options);
   rzp.open();
 }
+
+// Toast
+function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>{t.classList.remove('show');},2500);}
+
+// Confetti
+function launchConfetti(){const end=Date.now()+3000;const colors=['#6d5dfc','#4ade80','#facc15','#f472b6'];(function frame(){confetti({particleCount:5,angle:60,spread:55,origin:{x:0},colors:colors,startVelocity:25});confetti({particleCount:5,angle:120,spread:55,origin:{x:1},colors:colors,startVelocity:25});if(Date.now()<end){requestAnimationFrame(frame);}})();}
+
+// Close overlay
+function closeThankYou(){document.getElementById('thankYouOverlay').classList.remove('show'); window.scrollTo({top:0,behavior:'smooth'});}
 </script>
 
 </body>
