@@ -71,66 +71,34 @@ input:focus{outline:none;border:2px solid #6d5dfc;box-shadow:0 0 10px rgba(109,9
 <header>
   <h1>AdZen AI</h1>
   <p>AI-powered platform that builds, runs & scales your ads automatically. One setup, zero daily work. Boost ROI and save hours every day.</p>
-  <a href="#pricing" class="btn">Start for ₹999 / month</a>
+  <!-- 🔥 AUTOMATIC PAYMENT BUTTON -->
+  <input type="email" id="email" placeholder="Enter your email" />
+  <br><br>
+  <button class="btn" onclick="payAndRun()">Start for ₹999 / month</button>
 </header>
 
 <section class="container">
   <h2>Why AdZen AI is Different</h2>
-  <p class="sub">Unlike other ad tools, AdZen AI gives you complete automation, continuous optimization, and multi-platform coverage – all with one simple setup.</p>
+  <p class="sub">Complete automation, continuous optimization, multi-platform coverage – all in one simple setup.</p>
   <div class="grid">
-    <div class="card"><h3>✅ One-Time Setup</h3><p>Set your business goals and budget once. AI takes care of the rest.</p></div>
-    <div class="card"><h3>✅ Multi-Platform Automation</h3><p>Google, Meta, TikTok, and YouTube campaigns all managed automatically.</p></div>
-    <div class="card"><h3>✅ Continuous Optimization</h3><p>The AI monitors performance, adjusts bids, creatives, and targeting in real-time.</p></div>
-    <div class="card"><h3>✅ No Technical Skills Needed</h3><p>Even beginners can run professional campaigns without prior experience.</p></div>
-  </div>
-</section>
-
-<section class="container">
-  <h2>How It Works</h2>
-  <p class="sub">3-step simple automation to save time and maximize revenue.</p>
-  <div class="grid">
-    <div class="card"><h3>🚀 One-Time Setup</h3><p>Provide business info, goals, and budget.</p></div>
-    <div class="card"><h3>🤖 AI Campaign Engine</h3><p>Automatically generates ads, selects audience, and launches campaigns.</p></div>
-    <div class="card"><h3>📈 Auto Optimization</h3><p>AI continuously improves your campaign performance for maximum ROI.</p></div>
+    <div class="card"><h3>✅ One-Time Setup</h3><p>Set goals & budget once. AI handles the rest.</p></div>
+    <div class="card"><h3>✅ Multi-Platform Automation</h3><p>Google, Meta, TikTok, YouTube campaigns all automatic.</p></div>
+    <div class="card"><h3>✅ Continuous Optimization</h3><p>AI adjusts bids, creatives, targeting in real-time.</p></div>
+    <div class="card"><h3>✅ No Technical Skills Needed</h3><p>Beginner-friendly: zero prior experience required.</p></div>
   </div>
 </section>
 
 <section class="container pricing" id="pricing">
   <h2>Founder Early Access</h2>
-  <p class="sub">Limited-time offer for early adopters – reserve your spot today!</p>
+  <p class="sub">Reserve your spot today – limited-time offer!</p>
   <div class="price">₹999 / month</div>
-  <input type="email" id="email" placeholder="Enter your email" />
-  <br>
-  <button class="btn" onclick="payNow()">Pay & Subscribe</button>
 </section>
 
 <hr>
 
-<section class="container">
-  <h2>Frequently Asked Questions</h2>
-  <p class="sub">All your questions answered in a clear, human-friendly way.</p>
-  <div class="grid">
-    <div class="card"><h3>Do I need ad experience?</h3><p>No. AdZen AI handles everything from ad creation to optimization. Just provide your business goals.</p></div>
-    <div class="card"><h3>How fast will I see results?</h3><p>Typically within 24–48 hours, with full optimization improving performance over 7–10 days.</p></div>
-    <div class="card"><h3>Is my payment secure?</h3><p>Yes, we use Razorpay live integration – secure, trusted, and PCI-compliant.</p></div>
-    <div class="card"><h3>Can I cancel anytime?</h3><p>Refunds are available within 7 days for technical issues – risk-free.</p></div>
-    <div class="card"><h3>Which platforms are supported?</h3><p>Google, Meta, TikTok, YouTube – all campaigns fully automated.</p></div>
-    <div class="card"><h3>Will AdZen AI replace my marketing team?</h3><p>No. It complements your team, automating repetitive tasks and freeing up time for strategy.</p></div>
-    <div class="card"><h3>Why choose AdZen AI over others?</h3><p>One-time setup, full automation, multi-platform coverage, continuous optimization, affordable pricing – competitors can’t match this combination.</p></div>
-  </div>
-</section>
-
-<section class="container">
-  <h2>Legal & Policies</h2>
-  <div class="grid">
-    <div class="card"><h3>Privacy Policy</h3><p>We only collect essential info like name, email, and payment details. Data is never sold or shared. Payments processed securely via Razorpay.</p></div>
-    <div class="card"><h3>Terms & Conditions</h3><p>Users must comply with applicable laws. Abuse, spam, or illegal activity is strictly prohibited.</p></div>
-    <div class="card"><h3>Refund Policy</h3><p>Refunds apply only if technical issues prevent access, requested within 7 days.</p></div>
-  </div>
-</section>
-
 <footer>© 2026 AdZen AI • Built with ❤️ in India • AI Ad Automation for Businesses</footer>
 
+<!-- Thank-you overlay -->
 <div id="thankYouOverlay">
   <h1>Thank You!</h1>
   <p>Your subscription is confirmed. 🎉 AdZen AI will start optimizing your campaigns immediately.</p>
@@ -140,35 +108,63 @@ input:focus{outline:none;border:2px solid #6d5dfc;box-shadow:0 0 10px rgba(109,9
 <div id="toast">Payment Successful! 🎉</div>
 
 <script>
-// Scroll animation for cards
+// Scroll animation
 const cards=document.querySelectorAll('.card');
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.2});
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('visible');}
+    });
+},{threshold:0.2});
 cards.forEach(card=>observer.observe(card));
 
-// Razorpay Payment + toast + thank-you overlay
-function payNow(){
-  const email=document.getElementById("email").value;
-  if(!email){alert("Please enter your email"); return;}
-  var options={key:"rzp_live_S5zRaPEi4b9Zu6",amount:99900,currency:"INR",name:"AdZen AI",description:"Monthly Subscription",
-    handler:function(res){
-      showToast();
-      setTimeout(()=>{document.getElementById('thankYouOverlay').classList.add('show'); launchConfetti();},800);
-    },
-    prefill:{email:email},
-    theme:{color:"#6d5dfc"}
-  };
-  var rzp=new Razorpay(options);
-  rzp.open();
+// Payment + Auto backend trigger
+function payAndRun(){
+    const email=document.getElementById("email").value;
+    if(!email){ alert("Please enter your email"); return; }
+
+    var options = {
+        key: "rzp_live_S5zRaPEi4b9Zu6", // your Razorpay live key
+        amount: 99900,
+        currency: "INR",
+        name: "AdZen AI",
+        description: "Monthly Subscription",
+        prefill: { email: email },
+        handler: function(response){
+            showToast();
+            setTimeout(()=>{document.getElementById('thankYouOverlay').classList.add('show'); launchConfetti();},800);
+
+            // Call backend webhook automatically
+            fetch("https://adzen-backend.vercel.app/api/webhook", {
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({ email: email, payment_id: response.razorpay_payment_id })
+            })
+            .then(res=>res.json())
+            .then(data=>{console.log("Ads launched:",data);})
+            .catch(err=>{console.error(err);});
+        },
+        theme:{color:"#6d5dfc"}
+    };
+    var rzp=new Razorpay(options);
+    rzp.open();
 }
 
 // Toast
 function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>{t.classList.remove('show');},2500);}
 
 // Confetti
-function launchConfetti(){const end=Date.now()+3000;const colors=['#6d5dfc','#4ade80','#facc15','#f472b6'];(function frame(){confetti({particleCount:5,angle:60,spread:55,origin:{x:0},colors:colors,startVelocity:25});confetti({particleCount:5,angle:120,spread:55,origin:{x:1},colors:colors,startVelocity:25});if(Date.now()<end){requestAnimationFrame(frame);}})();}
+function launchConfetti(){
+    const end=Date.now()+3000;
+    const colors=['#6d5dfc','#4ade80','#facc15','#f472b6'];
+    (function frame(){
+        confetti({particleCount:5,angle:60,spread:55,origin:{x:0},colors:colors,startVelocity:25});
+        confetti({particleCount:5,angle:120,spread:55,origin:{x:1},colors:colors,startVelocity:25});
+        if(Date.now()<end){requestAnimationFrame(frame);}
+    })();
+}
 
 // Close overlay
-function closeThankYou(){document.getElementById('thankYouOverlay').classList.remove('show'); window.scrollTo({top:0,behavior:'smooth'});}
+function closeThankYou(){document.getElementById('thankYouOverlay').classList.remove('show');window.scrollTo({top:0,behavior:'smooth'});}
 </script>
 
 </body>
