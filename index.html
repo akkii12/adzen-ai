@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AdZen AI – Run & Scale Ads on Autopilot</title>
-  <meta name="description" content="AdZen AI automates ad creation, scaling, and optimization using AI. One form. Zero manual work." />
+  <meta name="description" content="AdZen AI automates ad creation, scaling, and optimization using AI." />
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -18,6 +21,7 @@
     header { text-align: center; }
     header h1 { font-size: 3rem; margin-bottom: 10px; }
     header p { font-size: 1.2rem; color: #b3b3b3; }
+
     .btn {
       display: inline-block;
       margin-top: 25px;
@@ -26,120 +30,158 @@
       color: #000;
       border-radius: 10px;
       font-weight: 600;
+      cursor: pointer;
+      border: none;
     }
+
     section { margin-top: 80px; }
     h2 { font-size: 2.2rem; margin-bottom: 20px; }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
       gap: 25px;
     }
+
     .card {
       background: #151520;
       padding: 25px;
       border-radius: 14px;
       border: 1px solid #222;
     }
-    .card h3 { margin-top: 0; }
+
     .pricing {
       text-align: center;
       background: #111827;
       border-radius: 16px;
       padding: 50px 20px;
     }
+
     .price {
       font-size: 3rem;
       font-weight: bold;
       margin: 20px 0;
     }
+
     footer {
       text-align: center;
       padding: 40px 20px;
       color: #888;
       font-size: 0.9rem;
     }
-    @media(max-width:600px){
-      header h1 { font-size: 2.3rem; }
+
+    input {
+      padding: 12px;
+      width: 260px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 15px;
     }
   </style>
 </head>
+
 <body>
 
-  <header class="container">
-    <h1>AdZen AI</h1>
-    <p>Build, Run & Scale Ads Automatically Using AI  
-      <br>⚡ One Form. Zero Manual Work.</p>
-    <a href="#pricing" class="btn">Get Early Access</a>
-  </header>
+<header class="container">
+  <h1>AdZen AI</h1>
+  <p>Build, Run & Scale Ads Automatically Using AI<br>⚡ One Form. Zero Manual Work.</p>
+  <a href="#pricing" class="btn">Get Early Access</a>
+</header>
 
-  <section class="container">
-    <h2>How It Works</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>1️⃣ One-Time Setup</h3>
-        <p>Fill a single form with your business details and goals.</p>
-      </div>
-      <div class="card">
-        <h3>2️⃣ AI Campaign Builder</h3>
-        <p>AI creates ads, selects targeting, budgets & creatives.</p>
-      </div>
-      <div class="card">
-        <h3>3️⃣ Auto Optimization</h3>
-        <p>AdZen AI continuously improves ROI while you sleep.</p>
-      </div>
-    </div>
-  </section>
+<section class="container">
+  <h2>How It Works</h2>
+  <div class="grid">
+    <div class="card"><h3>1️⃣ One-Time Setup</h3><p>Submit your business details.</p></div>
+    <div class="card"><h3>2️⃣ AI Campaign Builder</h3><p>AI generates ads & targeting.</p></div>
+    <div class="card"><h3>3️⃣ Auto Optimization</h3><p>AI improves performance continuously.</p></div>
+  </div>
+</section>
 
-  <section class="container">
-    <h2>Why AdZen AI?</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>🚀 Smart Optimization</h3>
-        <p>Reduce ad costs & increase conversions automatically.</p>
-      </div>
-      <div class="card">
-        <h3>🌍 Global Scaling</h3>
-        <p>Expand campaigns across countries & platforms instantly.</p>
-      </div>
-      <div class="card">
-        <h3>🧠 AI Decisions</h3>
-        <p>No agencies. No managers. Just pure AI execution.</p>
-      </div>
-    </div>
-  </section>
+<section class="container pricing" id="pricing">
+  <h2>Early Access Pricing</h2>
+  <p>Founder offer (limited)</p>
 
-  <section class="container pricing" id="pricing">
-    <h2>Early Access Pricing</h2>
-    <p>Limited-time founder offer</p>
-    <div class="price">₹999 / month</div>
-    <p>✔ Unlimited campaigns  
-       <br>✔ AI Optimization  
-       <br>✔ Priority Support</p>
-    <a href="#" class="btn">Join Waitlist</a>
-  </section>
+  <div class="price">₹999 / month</div>
 
-  <section class="container">
-    <h2>FAQs</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Do I need ad experience?</h3>
-        <p>No. AdZen AI handles everything end-to-end.</p>
-      </div>
-      <div class="card">
-        <h3>Is my ad account safe?</h3>
-        <p>Yes. We use official APIs & secure permissions.</p>
-      </div>
-      <div class="card">
-        <h3>When will full access launch?</h3>
-        <p>Early users get access before public release.</p>
-      </div>
-    </div>
-  </section>
+  <input type="email" id="email" placeholder="Enter your email" required />
+  <br>
 
-  <footer>
-    © 2026 AdZen AI • All Rights Reserved  
-    <br>Built with ❤️ using AI
-  </footer>
+  <button class="btn" onclick="payNow()">Pay & Subscribe</button>
+</section>
+
+<hr style="margin:80px 0;border-color:#222">
+
+<section class="container" id="policies">
+  <h2>Legal & Policies</h2>
+
+  <div class="card">
+    <h3>Privacy Policy</h3>
+    <p>
+      We collect only essential information such as name, email, and payment
+      details. Payments are securely processed via Razorpay. We do not sell or
+      share user data.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Terms & Conditions</h3>
+    <p>
+      AdZen AI provides AI-powered advertising automation tools. Results may vary.
+      Users must comply with applicable laws. Abuse or illegal use is prohibited.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Refund & Cancellation Policy</h3>
+    <p>
+      Refunds are only applicable if a technical issue prevents access.
+      Requests must be made within 7 days.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Contact</h3>
+    <p>
+      📧 akshaymahankar@gmail.com<br>
+      🌐 https://adzen-ai-kodz.vercel.app<br>
+      🇮🇳 India
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 AdZen AI • All Rights Reserved
+</footer>
+
+<script>
+function payNow() {
+  var email = document.getElementById("email").value;
+  if (!email) {
+    alert("Please enter your email");
+    return;
+  }
+
+  var options = {
+    key: "rzp_live_S5zRaPEi4b9Zu6",
+    amount: 99900,
+    currency: "INR",
+    name: "AdZen AI",
+    description: "Monthly Subscription",
+    handler: function (response) {
+      alert("Payment Successful! ID: " + response.razorpay_payment_id);
+    },
+    prefill: {
+      email: email
+    },
+    theme: {
+      color: "#6d5dfc"
+    }
+  };
+
+  var rzp = new Razorpay(options);
+  rzp.open();
+}
+</script>
 
 </body>
 </html>
